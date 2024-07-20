@@ -22,9 +22,10 @@ public class Group extends BaseModel{
     @ManyToMany
     private List<User> members;
 
-    @OneToMany
+    @OneToMany(mappedBy = "group")
     private List<Expense> expenses;
 
+    //MappedBy always used on one to many side and not vice versa
     /*
       1       M
     group----member => M:M
